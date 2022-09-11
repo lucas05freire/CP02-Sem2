@@ -71,3 +71,11 @@ resource "aws_s3_bucket_policy" "policys3" {
     ]
 	})
 }
+
+# VERSIONING S3 BUCKET
+resource "aws_s3_bucket_versioning" "versionings3" {
+  bucket = aws_s3_bucket.s3-95128.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
